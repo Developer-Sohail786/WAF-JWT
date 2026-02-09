@@ -1,0 +1,347 @@
+/* ==============================
+   Global Styling
+============================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #0b0b2a;
+  color: white;
+  scroll-behavior: smooth;
+}
+
+/* ==============================
+   Header Section
+============================== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 60px;
+  background-color: #0f0f40;
+  border-bottom: 1px solid #333;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+header span {
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav ul li a:hover {
+  color: #00bfff;
+}
+
+/* ==============================
+   Hero Section
+============================== */
+.first-sec {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 100px 80px;
+  flex-wrap: wrap;
+}
+
+.first-sec .left {
+  flex: 1;
+}
+
+.first-sec .left p {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.first-sec .left span {
+  color: #00bfff;
+  font-weight: bold;
+}
+
+.first-sec .right {
+  flex: 1;
+  text-align: right;
+}
+
+.first-sec img {
+  width: 300px;
+  max-width: 100%;
+  border-radius: 50%;
+  background: #ffffff11;
+  padding: 10px;
+}
+
+/* ==============================
+   Achievements Section
+============================== */
+.second-sec {
+  text-align: center;
+  padding: 60px 40px;
+}
+
+.second-sec p {
+  color: #ccccff;
+}
+
+.second-sec h1 {
+  font-size: 2rem;
+  margin: 20px 0 40px;
+  color: #ffffff;
+}
+
+.box {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  position: relative;
+  margin-top: 20px;
+  padding-top: 60px;
+}
+
+.box::before {
+  content: "";
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 2px;
+  width: 80%;
+  background-color: #ffffff55;
+}
+
+.vertical {
+  width: 18%;
+  position: relative;
+  text-align: center;
+}
+
+.vertical::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100px;
+  width: 2px;
+  background-color: #ffffff99;
+}
+
+.top-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: contain;
+  margin-bottom: 20px;
+  background-color: #fff;
+}
+
+.center {
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #00bfff;
+}
+
+/* ==============================
+   Social Media Section
+============================== */
+.third-sec {
+  text-align: center;
+  padding: 60px 40px;
+}
+
+.third-sec h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.social-items {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 60px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.anchor {
+  text-align: center;
+  width: 200px;
+}
+
+.social-img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: #fff;
+  padding: 5px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px #00bfff;
+}
+
+.social-desc {
+  font-size: 0.9rem;
+  color: #ccccff;
+  margin-top: 8px;
+}
+
+/* ==============================
+   Skills & Services Section
+============================== */
+.fourth-sec {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 80px 60px;
+  flex-wrap: wrap;
+  gap: 60px;
+}
+
+.sec-left,
+.sec-right {
+  flex: 1;
+  min-width: 300px;
+}
+
+.fourth-sec h1 {
+  font-size: 1.8rem;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.skill,
+.service {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background-color: #1e1e3f;
+  padding: 12px 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  transition: 0.3s ease;
+}
+
+.skill:hover,
+.service:hover {
+  background-color: #2e2e5f;
+}
+
+.skill i,
+.service i {
+  font-size: 1.5rem;
+  color: #00bfff;
+}
+
+/* ==============================
+   Footer Section
+============================== */
+footer {
+  background-color: #0f0f40;
+  color: #ffffff;
+  text-align: center;
+  padding: 60px 40px 30px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  gap: 40px;
+}
+
+.footer h3 {
+  color: #00bfff;
+  margin-bottom: 10px;
+}
+
+.footer ul {
+  list-style: none;
+}
+
+.footer ul li {
+  color: #ccccff;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+}
+
+.footer a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer a:hover {
+  color: #00bfff;
+}
+
+.footer-text {
+  margin-top: 40px;
+  font-size: 0.85rem;
+  color: #888;
+}
+
+/* ==============================
+   Responsive Design
+============================== */
+@media screen and (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .first-sec {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 20px;
+  }
+
+  .box::before {
+    display: none;
+  }
+
+  .vertical {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  .third-sec .social-items {
+    gap: 30px;
+  }
+
+  .fourth-sec {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer {
+    flex-direction: column;
+    text-align: center;
+  }
+}
