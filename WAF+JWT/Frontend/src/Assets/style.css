@@ -12,6 +12,7 @@ body {
   background-color: #0b0b2a;
   color: white;
   scroll-behavior: smooth;
+  overflow-x: hidden; /* ✅ prevent horizontal scroll */
 }
 
 /* ==============================
@@ -27,6 +28,8 @@ header {
   position: sticky;
   top: 0;
   z-index: 10;
+  flex-wrap: wrap; /* ✅ safe wrap */
+  gap: 10px;
 }
 
 header span {
@@ -40,18 +43,7 @@ nav ul {
   display: flex;
   list-style: none;
   gap: 30px;
-}
-
-nav ul li a {
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 0.95rem;
-  font-weight: 500;
-  transition: 0.3s;
-}
-
-nav ul li a:hover {
-  color: #00bfff;
+  flex-wrap: wrap; /* ✅ prevent overflow */
 }
 
 /* ==============================
@@ -63,10 +55,12 @@ nav ul li a:hover {
   align-items: center;
   padding: 100px 80px;
   flex-wrap: wrap;
+  gap: 40px; /* ✅ safer spacing */
 }
 
 .first-sec .left {
   flex: 1;
+  min-width: 260px; /* ✅ prevents crush */
 }
 
 .first-sec .left p {
@@ -82,11 +76,13 @@ nav ul li a:hover {
 .first-sec .right {
   flex: 1;
   text-align: right;
+  min-width: 260px; /* ✅ prevents overlap */
 }
 
 .first-sec img {
   width: 300px;
   max-width: 100%;
+  height: auto; /* ✅ important */
   border-radius: 50%;
   background: #ffffff11;
   padding: 10px;
@@ -100,16 +96,6 @@ nav ul li a:hover {
   padding: 60px 40px;
 }
 
-.second-sec p {
-  color: #ccccff;
-}
-
-.second-sec h1 {
-  font-size: 2rem;
-  margin: 20px 0 40px;
-  color: #ffffff;
-}
-
 .box {
   display: flex;
   justify-content: space-between;
@@ -118,64 +104,19 @@ nav ul li a:hover {
   position: relative;
   margin-top: 20px;
   padding-top: 60px;
-}
-
-.box::before {
-  content: "";
-  position: absolute;
-  top: 100px;
-  left: 50%;
-  transform: translateX(-50%);
-  height: 2px;
-  width: 80%;
-  background-color: #ffffff55;
+  gap: 30px; /* ✅ prevents squeeze */
 }
 
 .vertical {
   width: 18%;
+  min-width: 220px; /* ✅ mid-screen fix */
   position: relative;
   text-align: center;
-}
-
-.vertical::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  height: 100px;
-  width: 2px;
-  background-color: #ffffff99;
-}
-
-.top-img {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  object-fit: contain;
-  margin-bottom: 20px;
-  background-color: #fff;
-}
-
-.center {
-  font-weight: bold;
-  margin-bottom: 8px;
-  color: #00bfff;
 }
 
 /* ==============================
    Social Media Section
 ============================== */
-.third-sec {
-  text-align: center;
-  padding: 60px 40px;
-}
-
-.third-sec h1 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-}
-
 .social-items {
   display: flex;
   justify-content: center;
@@ -188,27 +129,7 @@ nav ul li a:hover {
 .anchor {
   text-align: center;
   width: 200px;
-}
-
-.social-img {
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
-  border-radius: 50%;
-  background: #fff;
-  padding: 5px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.social-img:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 10px #00bfff;
-}
-
-.social-desc {
-  font-size: 0.9rem;
-  color: #ccccff;
-  margin-top: 8px;
+  max-width: 100%; /* ✅ safety */
 }
 
 /* ==============================
@@ -229,35 +150,6 @@ nav ul li a:hover {
   min-width: 300px;
 }
 
-.fourth-sec h1 {
-  font-size: 1.8rem;
-  color: #ffffff;
-  margin-bottom: 20px;
-}
-
-.skill,
-.service {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  background-color: #1e1e3f;
-  padding: 12px 15px;
-  border-radius: 8px;
-  margin-bottom: 15px;
-  transition: 0.3s ease;
-}
-
-.skill:hover,
-.service:hover {
-  background-color: #2e2e5f;
-}
-
-.skill i,
-.service i {
-  font-size: 1.5rem;
-  color: #00bfff;
-}
-
 /* ==============================
    Footer Section
 ============================== */
@@ -276,50 +168,50 @@ footer {
   gap: 40px;
 }
 
-.footer h3 {
-  color: #00bfff;
-  margin-bottom: 10px;
-}
+/* ==============================
+   Tablet Fix (≤ 1024px)
+============================== */
+@media screen and (max-width: 1024px) {
+  header {
+    padding: 16px 30px;
+  }
 
-.footer ul {
-  list-style: none;
-}
+  .first-sec {
+    padding: 80px 40px;
+  }
 
-.footer ul li {
-  color: #ccccff;
-  margin-bottom: 5px;
-  font-size: 0.9rem;
-}
+  .fourth-sec {
+    padding: 60px 30px;
+  }
 
-.footer a {
-  color: #ffffff;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.footer a:hover {
-  color: #00bfff;
-}
-
-.footer-text {
-  margin-top: 40px;
-  font-size: 0.85rem;
-  color: #888;
+  .vertical {
+    width: 30%; /* ✅ prevents ugly gaps */
+  }
 }
 
 /* ==============================
-   Responsive Design
+   Mobile Fix (≤ 768px)
 ============================== */
 @media screen and (max-width: 768px) {
   header {
     flex-direction: column;
     gap: 10px;
+    padding: 14px 20px;
+  }
+
+  nav ul {
+    justify-content: center;
+    gap: 18px;
   }
 
   .first-sec {
     flex-direction: column;
     text-align: center;
     padding: 60px 20px;
+  }
+
+  .first-sec .right {
+    text-align: center;
   }
 
   .box::before {
@@ -338,6 +230,7 @@ footer {
   .fourth-sec {
     flex-direction: column;
     align-items: center;
+    padding: 60px 20px;
   }
 
   .footer {
@@ -345,3 +238,32 @@ footer {
     text-align: center;
   }
 }
+
+/* ==============================
+   Small Mobile (≤ 480px)
+============================== */
+@media screen and (max-width: 480px) {
+  header span {
+    font-size: 1.1rem;
+  }
+
+  .first-sec .left p {
+    font-size: 1.2rem;
+  }
+
+  .second-sec h1,
+  .third-sec h1,
+  .fourth-sec h1 {
+    font-size: 1.6rem;
+  }
+
+  .social-img {
+    width: 50px;
+    height: 50px;
+  }
+
+  footer {
+    padding: 50px 20px 25px;
+  }
+}
+
