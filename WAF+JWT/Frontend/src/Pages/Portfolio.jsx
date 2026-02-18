@@ -26,10 +26,10 @@ export default function Portfolio() {
 
   return (
     <>
-      <header>
+      <header className="flex flex-wrap items-center justify-between gap-3">
         <span>Sohail's Portfolio</span>
-        <nav>
-          <ul>
+        <nav className="w-full sm:w-auto">
+          <ul className="flex flex-wrap gap-3 justify-center sm:justify-end">
             <li><a href="#Home">Home</a></li>
             <li><a href="#About">About</a></li>
             <li><a href="#Services">Services</a></li>
@@ -55,17 +55,22 @@ export default function Portfolio() {
         </nav>
       </header>
 
-      <main>
-        <section className="first-sec" id="Home">
-          <div className="left">
+      <main className="overflow-x-hidden">
+        <section className="first-sec flex flex-wrap items-center justify-center gap-6" id="Home">
+          <div className="left min-w-[260px]">
             <p>
               Hello, This is <span>Sohail Khan</span>
             </p>
             <p>and I'm a Passionate</p>
             <span id="element" ref={typedRef}></span>
           </div>
-          <div className="right">
-            <img src="/images/bg.png" alt="background" />
+
+          <div className="right flex justify-center">
+            <img
+              src="/images/bg.png"
+              alt="background"
+              className="max-w-full h-auto"
+            />
           </div>
         </section>
 
@@ -74,9 +79,10 @@ export default function Portfolio() {
         <section className="second-sec">
           <p>My progress so far</p>
           <h1>Achievements</h1>
-          <div className="box">
-            <div className="vertical">
-              <img src="/images/Bethany.png" alt="Bethany" className="top-img" />
+
+          <div className="box flex flex-wrap justify-center gap-6">
+            <div className="vertical max-w-[300px]">
+              <img src="/images/Bethany.png" alt="Bethany" className="top-img max-w-full h-auto" />
               <p className="center">2014-2021</p>
               <p>
                 I've completed my HSLC class 10 from Bethany Convent School. I was
@@ -85,8 +91,8 @@ export default function Portfolio() {
               </p>
             </div>
 
-            <div className="vertical">
-              <img src="/images/BBC.png" alt="BBC" className="top-img BBC-img" />
+            <div className="vertical max-w-[300px]">
+              <img src="/images/BBC.png" alt="BBC" className="top-img BBC-img max-w-full h-auto" />
               <p className="center">2021-2023</p>
               <p>
                 I have completed my HS from B.Borooah College with commerce
@@ -95,14 +101,14 @@ export default function Portfolio() {
               </p>
             </div>
 
-            <div className="vertical">
-              <img src="/images/Nielit.png" alt="Nielit" className="top-img" />
+            <div className="vertical max-w-[300px]">
+              <img src="/images/Nielit.png" alt="Nielit" className="top-img max-w-full h-auto" />
               <p className="center">2024-June</p>
               <p>I have done an internship at NIELIT Guwahati in Cybersecurity</p>
             </div>
 
-            <div className="vertical">
-              <img src="/images/Nielit.png" alt="Nielit" className="top-img" />
+            <div className="vertical max-w-[300px]">
+              <img src="/images/Nielit.png" alt="Nielit" className="top-img max-w-full h-auto" />
               <p className="center">2025-April</p>
               <p>
                 I have completed a bootcamp in IoT with AI which was conducted by
@@ -110,8 +116,8 @@ export default function Portfolio() {
               </p>
             </div>
 
-            <div className="vertical">
-              <img src="/images/GCU.png" alt="GCU" className="top-img" />
+            <div className="vertical max-w-[300px]">
+              <img src="/images/GCU.png" alt="GCU" className="top-img max-w-full h-auto" />
               <p className="center">2023-2026</p>
               <p>
                 Currently I'm pursuing BCA at Girijananda Chowdhury University,
@@ -128,8 +134,8 @@ export default function Portfolio() {
           <h1>Social Media</h1>
           <p>Click on the icon to get to the profile</p>
 
-          <div className="social-items">
-            <div className="anchor">
+          <div className="social-items flex flex-wrap justify-center gap-6">
+            <div className="anchor max-w-[220px] text-center">
               <a
                 href="https://www.linkedin.com/in/sohail-khan-8a5b36371/"
                 target="_blank"
@@ -138,13 +144,13 @@ export default function Portfolio() {
                 <img
                   src="/images/linkedin.png"
                   alt="LinkedIn"
-                  className="social-img"
+                  className="social-img max-w-full h-auto"
                 />
               </a>
               <p className="social-desc">Connect with me on LinkedIn</p>
             </div>
 
-            <div className="anchor">
+            <div className="anchor max-w-[220px] text-center">
               <a
                 href="https://github.com/Developer-Sohail786"
                 target="_blank"
@@ -153,13 +159,13 @@ export default function Portfolio() {
                 <img
                   src="/images/github-logo.png"
                   alt="GitHub"
-                  className="social-img"
+                  className="social-img max-w-full h-auto"
                 />
               </a>
               <p className="social-desc">View my projects and source code</p>
             </div>
 
-            <div className="anchor">
+            <div className="anchor max-w-[220px] text-center">
               <a
                 href="https://www.instagram.com/sohailkhan_n19"
                 target="_blank"
@@ -168,13 +174,13 @@ export default function Portfolio() {
                 <img
                   src="/images/instagram-logo.png"
                   alt="Instagram"
-                  className="social-img"
+                  className="social-img max-w-full h-auto"
                 />
               </a>
               <p className="social-desc">See what I'm up to beyond coding</p>
             </div>
 
-            <div className="anchor">
+            <div className="anchor max-w-[220px] text-center">
               <a
                 href="https://wa.me/918918716256"
                 target="_blank"
@@ -183,7 +189,7 @@ export default function Portfolio() {
                 <img
                   src="/images/Whatsapp-logo.png"
                   alt="WhatsApp"
-                  className="social-img"
+                  className="social-img max-w-full h-auto"
                 />
               </a>
               <p className="social-desc">
@@ -195,8 +201,8 @@ export default function Portfolio() {
 
         <hr />
 
-        <section className="fourth-sec">
-          <div className="sec-left">
+        <section className="fourth-sec flex flex-wrap gap-8 justify-center">
+          <div className="sec-left min-w-[260px] max-w-[500px]">
             <h2>Skills</h2>
 
             <div className="skill">
@@ -230,8 +236,9 @@ export default function Portfolio() {
             </div>
           </div>
 
-          <div className="sec-right" id="Services">
+          <div className="sec-right min-w-[260px] max-w-[500px]" id="Services">
             <h1>Service offered</h1>
+
             <div className="service">
               <i className="fas fa-code"></i>
               <p>Web Development (MERN Stack)</p>
@@ -258,8 +265,8 @@ export default function Portfolio() {
       <footer>
         <h3>SOHAIL'S PORTFOLIO WEBSITE</h3>
 
-        <div className="footer" id="About">
-          <div className="footer-first">
+        <div className="footer flex flex-wrap gap-8 justify-center" id="About">
+          <div className="footer-first min-w-[220px]">
             <h3>About Me</h3>
             <ul>
               <li>MERN Stack Developer</li>
@@ -269,7 +276,7 @@ export default function Portfolio() {
             </ul>
           </div>
 
-          <div className="footer-second">
+          <div className="footer-second min-w-[220px]">
             <h3>Technologies</h3>
             <ul>
               <li>HTML, CSS, JavaScript</li>
@@ -279,7 +286,7 @@ export default function Portfolio() {
             </ul>
           </div>
 
-          <div className="footer-third">
+          <div className="footer-third min-w-[220px]">
             <h3>Services</h3>
             <ul>
               <li>Web Development</li>
@@ -289,7 +296,7 @@ export default function Portfolio() {
             </ul>
           </div>
 
-          <div className="footer-fourth">
+          <div className="footer-fourth min-w-[220px]">
             <h3>Contact</h3>
             <ul>
               <li>Email: youremail@example.com</li>
@@ -316,10 +323,11 @@ export default function Portfolio() {
           </div>
         </div>
 
-        <div className="footer-text">
+        <div className="footer-text text-center px-4">
           Copyright © sohailportfolio.com | All rights reserved
         </div>
       </footer>
     </>
   );
 }
+
