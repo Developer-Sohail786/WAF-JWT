@@ -22,8 +22,8 @@ const app = express();
 app.use(helmet());
 app.use(
   cors({
-    origin: "*", // React frontend origin
-    // credentials: true, // allow cookies to be sent
+    origin: "https://waf-jwt-frontend.vercel.app", // frontend origin
+     credentials: true, // allow cookies to be sent
   })
 );
 app.set("trust proxy", 1)
