@@ -1,0 +1,381 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Poppins",sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:rgb(3,3,44);
+color:white;
+overflow-x:hidden;
+}
+
+/* HEADER */
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 10%;
+background:rgb(5,5,67);
+position:relative;
+}
+
+header span{
+font-size:1.5rem;
+font-weight:500;
+}
+
+/* HAMBURGER */
+
+.menu-btn{
+display:none;
+font-size:24px;
+cursor:pointer;
+}
+
+/* NAV */
+
+.nav-menu ul{
+display:flex;
+gap:25px;
+}
+
+nav ul li{
+list-style:none;
+}
+
+nav a{
+text-decoration:none;
+color:white;
+transition:0.2s;
+}
+
+nav a:hover{
+color:rgb(200,200,200);
+}
+
+/* HERO SECTION */
+
+.first-sec{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:100px 10%;
+flex-wrap:wrap;
+gap:40px;
+}
+
+.left{
+font-size:2rem;
+line-height:1.6;
+max-width:500px;
+}
+
+.left span{
+color:blueviolet;
+}
+
+.right img{
+width:350px;
+max-width:100%;
+}
+
+/* DIVIDER */
+
+hr{
+width:80%;
+margin:40px auto;
+border:none;
+border-top:2px solid rgb(54,54,140);
+}
+
+/* ACHIEVEMENTS */
+
+.second-sec{
+width:80%;
+margin:auto;
+padding:60px 0;
+}
+
+.second-sec p{
+color:gray;
+font-size:0.8rem;
+}
+
+.second-sec h1{
+margin-bottom:40px;
+}
+
+.box{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:40px;
+}
+
+.vertical{
+background:rgb(5,5,67);
+padding:20px;
+border-radius:8px;
+text-align:center;
+}
+
+.top-img{
+width:40px;
+margin-bottom:10px;
+}
+
+/* PROJECTS */
+
+.projects{
+padding:80px 10%;
+}
+
+.projects h2{
+margin-bottom:40px;
+}
+
+.projects-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.project-card{
+background:#0d1148;
+border-radius:10px;
+padding:20px;
+transition:0.3s;
+}
+
+.project-card:hover{
+transform:translateY(-5px);
+box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
+
+.project-card h3{
+margin-bottom:10px;
+}
+
+.project-card p{
+font-size:14px;
+}
+
+.tech{
+margin-top:10px;
+color:#9ca3ff;
+font-size:13px;
+}
+
+.project-links{
+margin-top:15px;
+}
+
+.project-links a{
+text-decoration:none;
+margin-right:15px;
+color:#6c7cff;
+}
+
+/* SKILLS + TOOLS */
+
+.skills{
+text-align:center;
+font-size:2rem;
+margin-top:60px;
+}
+
+.fourth-sec{
+padding:80px 10%;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:80px;
+align-items:start;
+}
+
+.sec-left,
+.sec-right{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+text-align:center;
+}
+
+.sec-left h2,
+.sec-right h1{
+grid-column:1/-1;
+margin-bottom:20px;
+}
+
+.skill,
+.service{
+display:flex;
+flex-direction:column;
+align-items:center;
+}
+
+.skill i,
+.service i{
+font-size:32px;
+margin-bottom:6px;
+}
+
+.skill p,
+.service p{
+font-size:14px;
+}
+
+/* SOCIAL SECTION */
+
+.third-sec{
+width:80%;
+margin:auto;
+padding:60px 0;
+}
+
+.third-sec p{
+color:gray;
+margin-bottom:20px;
+}
+
+.social-items{
+display:flex;
+flex-direction:column;
+gap:25px;
+margin-top:20px;
+}
+
+.anchor{
+display:flex;
+align-items:center;
+gap:20px;
+}
+
+.social-img{
+width:50px;
+}
+
+.social-desc{
+font-size:14px;
+}
+
+/* FOOTER */
+
+footer{
+background:rgb(18,18,41);
+padding-top:40px;
+}
+
+.footer{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:40px;
+width:80%;
+margin:auto;
+text-align:center;
+}
+
+.footer div{
+display:flex;
+flex-direction:column;
+align-items:center;
+}
+
+.footer ul{
+padding:0;
+}
+
+.footer ul li{
+list-style:none;
+margin-bottom:8px;
+}
+
+footer h3{
+text-align:center;
+margin-bottom:20px;
+}
+
+.footer-text{
+text-align:center;
+padding:20px 0;
+color:gray;
+}
+
+/* TABLET */
+
+@media (max-width:768px){
+
+.menu-btn{
+display:block;
+}
+
+.nav-menu{
+display:none;
+width:100%;
+}
+
+.nav-menu ul{
+flex-direction:column;
+align-items:center;
+padding:20px 0;
+gap:15px;
+}
+
+.nav-menu.active{
+display:block;
+}
+
+header{
+flex-wrap:wrap;
+}
+
+.first-sec{
+flex-direction:column;
+text-align:center;
+}
+
+.left{
+font-size:1.6rem;
+}
+
+.right img{
+width:250px;
+}
+
+.fourth-sec{
+grid-template-columns:1fr;
+gap:60px;
+}
+
+}
+
+/* MOBILE */
+
+@media (max-width:480px){
+
+.left{
+font-size:1.3rem;
+}
+
+.projects{
+padding:60px 5%;
+}
+
+.second-sec{
+width:90%;
+}
+
+.third-sec{
+width:90%;
+}
+
+.footer{
+width:90%;
+}
+
+}
