@@ -130,7 +130,7 @@ if (doubleEncoded.test(combined)) return true;
 
 const CONFIG = {
   staticBlockedIps: [], //permanant blocked Ip's
-  requireClientIdHeader: false,
+  requireClientIdHeader: true,
   requireJsonOnWrite: true,
   // rate limit settings(Block 5 cont....)
   rateLimit: {
