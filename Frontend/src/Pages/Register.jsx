@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { useNavigate,Link } from "react-router-dom";
 import { endpoints } from "../utils/api";
 import axiosPrivate from "../utils/axiosPrivate";
+import { useState } from "react";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -13,10 +14,11 @@ const Register = () => {
     setError,
     formState: { errors, isSubmitting },
   } = useForm();
+   const [serverError, setserverError] = useState("");
 
   const onSubmit = async (data) => {
     try {
-      
+      setserverError("");
       const response = await axiosPrivate.post(endpoints.register, {
         name: data.name,
         email: data.email,
@@ -26,7 +28,7 @@ const Register = () => {
       navigate("/login");
     } catch (error) {
       
-      alert(error.response?.data?.message || "Internal server error");
+      setserverError(error.response?.data?.message || "Internal server error");
     }
   };
 
@@ -40,6 +42,12 @@ const Register = () => {
           Create your new account here
         </p>
       </div>
+      {/* Server error */}
+      {serverError && (
+        <div className="bg-red-100 text-red-600 text-sm p-3 rounded-md mt-4 text-center">
+          {serverError}
+        </div>
+      )}
 
       <form onSubmit={handleSubmit(onSubmit)} className="mt-6 space-y-5">
 
@@ -124,3 +132,4 @@ const Register = () => {
 };
 
 export default Register;
+
