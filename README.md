@@ -127,15 +127,16 @@ GET /health
 ' OR 1=1 --
 UNION SELECT
 DROP TABLE
-
+---
 
 ### XSS
 
 <script> onerror= javascript:
-  
+---
 ### Path Traversal
   
 ../ %2E%2E
+  ---
 When detected, the request is blocked:
 { "ok": false, "reason": "malicious_payload" }
 --- ## Local Setup Clone the repository
@@ -157,7 +158,7 @@ npm start
 Run frontend
 npm run dev
 
-
+---
 
   ```
 --- ## Author Sohail Khan
