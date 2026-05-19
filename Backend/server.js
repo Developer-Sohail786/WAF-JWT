@@ -22,8 +22,11 @@ const app = express();
 app.use(helmet());
 app.use(
   cors({
-    origin: "https://waf-jwt-frontend.vercel.app", // frontend origin
-     credentials: true, // allow cookies to be sent
+    origin: [
+      "http://localhost:5173", //frontend origin (localhost)
+      "https://waf-jwt-frontend.vercel.app" //frontend origin 
+    ],
+    credentials: true
   })
 );
 app.set("trust proxy", 1)

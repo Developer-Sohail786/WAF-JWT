@@ -62,6 +62,10 @@ return (
             placeholder="Enter your email"
             {...register("email", {
               required: { value: true, message: "Field can't be empty" },
+               pattern: {
+                  value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                  message: "Invalid email format",
+                },
             })}
           />
           {errors.email && (
@@ -79,6 +83,17 @@ return (
             placeholder="Enter your password"
             {...register("password", {
               required: { value: false, message: "Field can't be empty" },
+               minLength: {
+                  value: 8,
+                  message: "Minimum 8 characters required",
+                },
+
+                pattern: {
+                  value:
+                    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
+                  message:
+                    "Password must contain uppercase, lowercase, number and special character",
+                },
             })}
           />
           {errors.password && (
